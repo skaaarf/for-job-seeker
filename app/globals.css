@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  /* Mikata-kun Palette: Calm Teal & Slate */
+  --background: #F8FAFC; /* Slate-50: Off-white/Paper feel */
+  --foreground: #334155; /* Slate-700: Readable text */
+
+  --primary: #0F766E; /* Teal-700: Trustworthy, calm */
+  --primary-foreground: #F0FDFA; /* Teal-50 */
+
+  --secondary: #E2E8F0; /* Slate-200: Subtle borders/backgrounds */
+  --secondary-foreground: #475569; /* Slate-600 */
+
+  --accent: #F59E0B; /* Amber-500: Friendly accent */
+  --accent-foreground: #FFFBEB; /* Amber-50 */
+
+  --muted: #94A3B8; /* Slate-400 */
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these base styles to ensure that your existing
+  utilities continue working as expected.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
